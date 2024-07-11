@@ -149,14 +149,7 @@ header nav ul li a:hover {
 
 /* Footer Styling */
 footer {
-  background-color: #35424a;
-  color: #ffffff;
-  text-align: center;
-  padding: 20px 0;
-}
-
-footer p {
-  margin: 0;
+  display: none;
 }
 
 /* Responsive Design */
@@ -203,9 +196,24 @@ footer p {
 
   .image-gallery img {
     width: 100%;
+  }
+
+  .footer {
+    display: block;
+  }
+
+  .footer-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px 0;
+    justify-content: space-evenly;
+  }
+
+  .footer-btn {
+    padding: 10px;
+    background-color: transparent;
+    border: none;
   }
 }
 
