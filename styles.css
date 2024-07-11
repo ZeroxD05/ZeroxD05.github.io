@@ -344,5 +344,28 @@ footer {
       font-size: 0.8rem; /* optional: Textgröße anpassen */
       color: #000;
     }
+
+    .footer-container {
+      opacity: 0; /* Anfangs unsichtbar */
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #007bff;
+      color: #ffffff;
+      padding: 20px 0;
+      text-align: center;
+      border-top-left-radius: 80% 20px;
+      border-top-right-radius: 80% 20px;
+      transition: opacity 0.6s ease, transform 0.6s ease; /* Übergangseffekte */
+      transform: translateY(
+        100%
+      ); /* Unterhalb des sichtbaren Bereichs starten */
+    }
+
+    .footer-container.visible {
+      opacity: 1; /* Sichtbar machen */
+      transform: translateY(0); /* In den sichtbaren Bereich verschieben */
+    }
   }
 }

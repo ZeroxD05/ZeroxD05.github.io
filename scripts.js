@@ -63,3 +63,32 @@ document.addEventListener("DOMContentLoaded", function () {
   // Event Listener für das Scrollen hinzufügen
   window.addEventListener("scroll", checkScroll);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const features = document.querySelectorAll(".feature");
+  const footer = document.querySelector(".footer-container");
+
+  function checkScroll() {
+    const viewportHeight = window.innerHeight;
+
+    features.forEach((feature) => {
+      const featurePosition = feature.getBoundingClientRect().top;
+      if (featurePosition < viewportHeight * 0.75) {
+        feature.classList.add("active");
+      }
+    });
+
+    // Check if user has scrolled down 100px to display the footer
+    if (window.scrollY > 100) {
+      footer.classList.add("visible");
+    } else {
+      footer.classList.remove("visible");
+    }
+  }
+
+  // Initial check when the page loads
+  checkScroll();
+
+  // Add event listener for scroll
+  window.addEventListener("scroll", checkScroll);
+});
