@@ -1,4 +1,6 @@
-// Form validation example
+// JavaScript (scripts.js)
+
+// Formularvalidierung
 function validateForm() {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
@@ -8,34 +10,34 @@ function validateForm() {
     return false;
   }
 
-  // Additional validation logic can be added here
+  // Zusätzliche Validierungslogik kann hier hinzugefügt werden
 
   return true;
 }
 
-// Image gallery example
+// Bildergalerie Beispiel
 const images = document.querySelectorAll(".image-gallery img");
 
 images.forEach((img) => {
   img.addEventListener("click", () => {
-    // Example: Open a modal or perform an action with the clicked image
+    // Beispiel: Öffnen eines Modals oder Ausführen einer Aktion mit dem angeklickten Bild
     console.log("Clicked on image:", img.alt);
   });
 });
 
-const footerButtons = document.querySelectorAll(".footer-btn");
+// Automatische Bildergalerie
+const gallery = document.querySelector(".image-gallery");
+let currentIndex = 0;
+const slideWidth = images[0].clientWidth; // Breite eines einzelnen Bildes
 
-// Füge einen Event Listener für jedes Button hinzu
-footerButtons.forEach((button) => {
-  button.addEventListener("click", function () {
-    // Entferne die 'active'-Klasse von allen Buttons
-    footerButtons.forEach((btn) => btn.classList.remove("active"));
-    // Füge die 'active'-Klasse zum angeklickten Button hinzu
-    this.classList.add("active");
+function slideGallery() {
+  currentIndex++;
+  if (currentIndex >= images.length) {
+    currentIndex = 0;
+  }
 
-    // Optional: Um den aktiven Zustand nach einer kurzen Zeit zu entfernen, aktiviere den folgenden Code
-    // setTimeout(() => {
-    //   button.classList.remove('active');
-    // }, 300); // 300 Millisekunden (oder eine andere geeignete Zeitspanne)
-  });
-});
+  const offset = -1 * currentIndex * slideWidth;
+  gallery.style.transform = `translateX(${offset}px)`;
+}
+
+setInterval(slideGallery, 3000); // Ändern Sie 3000 für die Geschwindigkeit der Animation (in Millisekunden)
