@@ -206,29 +206,6 @@ footer p {
   }
 }
 
-/* Wenn die Bildschirmbreite kleiner als 768px ist (typischerweise Mobilgeräte): */
-@media screen and (max-width: 767px) {
-  .navbar {
-    flex-direction: column; /* Stacked layout */
-  }
-  .nav-item {
-    margin: 10px 0;
-  }
-  .dropdown {
-    display: block; /* Dropdown-Menü wird angezeigt */
-  }
-}
-
-/* Wenn die Bildschirmbreite größer als 768px ist (typischerweise Desktop): */
-@media screen and (min-width: 768px) {
-  .navbar {
-    flex-direction: row; /* Standard Navbar-Layout */
-  }
-  .dropdown {
-    display: none; /* Dropdown-Menü ausgeblendet */
-  }
-}
-
 span {
   background: linear-gradient(to right, #f2b705, #007bff);
   -webkit-background-clip: text;
