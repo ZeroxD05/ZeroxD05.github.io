@@ -41,3 +41,25 @@ function slideGallery() {
 }
 
 setInterval(slideGallery, 3000); // Ändern Sie 3000 für die Geschwindigkeit der Animation (in Millisekunden)
+
+// JavaScript für das Einfladen der Features beim Scrollen
+document.addEventListener("DOMContentLoaded", function () {
+  const features = document.querySelectorAll(".feature");
+
+  function checkScroll() {
+    features.forEach((feature) => {
+      const featurePosition = feature.getBoundingClientRect().top;
+      const viewportHeight = window.innerHeight;
+
+      if (featurePosition < viewportHeight * 0.75) {
+        feature.classList.add("active");
+      }
+    });
+  }
+
+  // Initialer Check beim Laden der Seite
+  checkScroll();
+
+  // Event Listener für das Scrollen hinzufügen
+  window.addEventListener("scroll", checkScroll);
+});

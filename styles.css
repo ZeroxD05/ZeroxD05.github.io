@@ -122,6 +122,17 @@ header nav ul li a:hover {
   transition: transform 0.3s ease;
 }
 
+.features .feature {
+  opacity: 0; /* Anfangs unsichtbar machen */
+  transform: translateY(50px); /* Verschieben nach unten für das Einfladen */
+  transition: opacity 0.6s ease, transform 0.6s ease; /* Übergangseffekte */
+}
+
+.features .feature.active {
+  opacity: 1; /* Sichtbar machen */
+  transform: translateY(0); /* Zurücksetzen der Verschiebung */
+}
+
 .features .feature:hover {
   transform: translateY(-5px);
 }
