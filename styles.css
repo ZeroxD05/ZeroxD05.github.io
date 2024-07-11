@@ -198,22 +198,28 @@ footer {
     width: 100%;
   }
 
-  .footer {
-    display: block;
-  }
-
+  /* Footer Styling */
   .footer-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
+    background-color: #35424a;
+    color: #ffffff;
+    text-align: center;
     padding: 20px 0;
-    justify-content: space-evenly;
   }
 
-  .footer-btn {
-    padding: 10px;
+  .footer-container .footer-btn {
     background-color: transparent;
     border: none;
+    cursor: pointer;
+    color: #ffffff;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .footer-container .footer-btn img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
   }
 }
 
