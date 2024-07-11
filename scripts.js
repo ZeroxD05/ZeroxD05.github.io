@@ -92,3 +92,28 @@ document.addEventListener("DOMContentLoaded", function () {
   // Add event listener for scroll
   window.addEventListener("scroll", checkScroll);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const features = document.querySelectorAll(".feature");
+  const footer = document.querySelector(".footer-container");
+
+  function checkScroll() {
+    const viewportHeight = window.innerHeight;
+
+    features.forEach((feature) => {
+      const featurePosition = feature.getBoundingClientRect().top;
+      if (featurePosition < viewportHeight * 0.75) {
+        feature.classList.add("active");
+      }
+    });
+
+    if (window.scrollY > 100) {
+      footer.classList.add("visible");
+    } else {
+      footer.classList.remove("visible");
+    }
+  }
+
+  checkScroll();
+  window.addEventListener("scroll", checkScroll);
+});

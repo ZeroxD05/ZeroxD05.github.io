@@ -98,11 +98,23 @@ header nav ul li a:hover {
   padding: 10px 20px;
   border-radius: 5px;
   transition: background-color 0.3s ease;
+  animation: colorChange 4s ease-in-out infinite;
 }
 
 .hero .btn:hover {
   background-color: #d39e00;
 }
+
+@keyframes colorChange {
+  0%,
+  100% {
+    background-color: #f2b705;
+  }
+  50% {
+    background-color: #d39e008b;
+  }
+}
+
 /* Features Section */
 .features {
   text-align: center;
