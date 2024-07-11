@@ -117,3 +117,47 @@ document.addEventListener("DOMContentLoaded", function () {
   checkScroll();
   window.addEventListener("scroll", checkScroll);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const features = document.querySelectorAll(".feature");
+  const footer = document.querySelector(".footer-container");
+
+  function checkScroll() {
+    const viewportHeight = window.innerHeight;
+
+    features.forEach((feature) => {
+      const featurePosition = feature.getBoundingClientRect().top;
+      if (featurePosition < viewportHeight * 0.75) {
+        feature.classList.add("active");
+      }
+    });
+
+    if (window.scrollY > 100) {
+      footer.classList.add("visible");
+    } else {
+      footer.classList.remove("visible");
+    }
+  }
+
+  checkScroll();
+  window.addEventListener("scroll", checkScroll);
+
+  // Smooth scrolling to the "Get the App" button
+  const footerButtons = document.querySelectorAll(".footer-btn");
+
+  footerButtons.forEach((button) => {
+    button.addEventListener("click", function (event) {
+      event.preventDefault();
+      const target = document.querySelector("#get-the-app");
+      const offsetTop =
+        target.getBoundingClientRect().top +
+        window.scrollY -
+        window.innerHeight / 2 +
+        target.offsetHeight / 2;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+    });
+  });
+});
