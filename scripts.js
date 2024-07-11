@@ -22,3 +22,20 @@ images.forEach((img) => {
     console.log("Clicked on image:", img.alt);
   });
 });
+
+const footerButtons = document.querySelectorAll(".footer-btn");
+
+// Füge einen Event Listener für jedes Button hinzu
+footerButtons.forEach((button) => {
+  button.addEventListener("click", function () {
+    // Entferne die 'active'-Klasse von allen Buttons
+    footerButtons.forEach((btn) => btn.classList.remove("active"));
+    // Füge die 'active'-Klasse zum angeklickten Button hinzu
+    this.classList.add("active");
+
+    // Optional: Um den aktiven Zustand nach einer kurzen Zeit zu entfernen, aktiviere den folgenden Code
+    // setTimeout(() => {
+    //   button.classList.remove('active');
+    // }, 300); // 300 Millisekunden (oder eine andere geeignete Zeitspanne)
+  });
+});
