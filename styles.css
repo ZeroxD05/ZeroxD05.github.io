@@ -408,5 +408,9 @@ footer {
     .footer-btn:hover {
       text-decoration: none;
     }
+
+    .footer-btn:active {
+      background-color: transparent;
+    }
   }
 }
